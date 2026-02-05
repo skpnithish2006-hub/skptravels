@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="SKP Travels - Premium van rental and booking service. Book our comfortable van for trips, tours, and events.">
+    <title>SKP Travels - Van Rental & Booking Service</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .hero-van-image {
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            opacity: 0.3;
+        }
+
+        .hero-van-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="loading-overlay">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-brand">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z" />
+                </svg>
+                SKP Travels
+            </a>
+            <button class="navbar-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+            <div class="navbar-menu">
+                <a href="index.html" class="navbar-link active">Home</a>
+                <a href="booking.html" class="navbar-link">Book Van</a>
+                <a href="assistant.html" class="navbar-link">AI Assistant</a>
+                <a href="dashboard.html" class="navbar-link">Dashboard</a>
+                <a href="contact.html" class="navbar-link">Contact</a>
+                <button class="theme-toggle" aria-label="Toggle theme">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-van-image">
+            <img src="images/van-front.jpg" alt="SKP Travels Van">
+        </div>
+        <div class="hero-shapes">
+            <div class="hero-shape"></div>
+            <div class="hero-shape"></div>
+            <div class="hero-shape"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge">🚐 Premium Van Rental Service</div>
+            <h1 class="hero-title">Your Journey, Our Van<br>Travel in Comfort</h1>
+            <p class="hero-subtitle">Book our premium van for family trips, tours, pilgrimages, and events. Comfortable
+                seating, experienced driver, and hassle-free booking with AI assistance.</p>
+            <div class="hero-buttons">
+                <a href="booking.html" class="hero-btn-primary">Check Availability</a>
+                <a href="booking.html" class="hero-btn-secondary">Book Now →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features section">
+        <div class="container">
+            <div class="features-header">
+                <h2 class="heading-2">Why Choose <span class="text-gradient">SKP Travels?</span></h2>
+                <p class="text-secondary">Experience premium van rental with top-notch service</p>
+            </div>
+            <div class="features-grid">
+                <div class="card feature-card">
+                    <div class="feature-icon">🚐</div>
+                    <h3>Premium Van</h3>
+                    <p>Well-maintained, air-conditioned van with comfortable seating. Perfect for family trips and group
+                        tours.</p>
+                </div>
+                <div class="card feature-card">
+                    <div class="feature-icon">📅</div>
+                    <h3>Easy Booking</h3>
+                    <p>Check real-time availability on our calendar. Green means available, red means booked - simple!
+                    </p>
+                </div>
+                <div class="card feature-card">
+                    <div class="feature-icon">�‍✈️</div>
+                    <h3>Experienced Driver</h3>
+                    <p>Professional, courteous driver with years of experience. Safe and comfortable journeys
+                        guaranteed.</p>
+                </div>
+                <div class="card feature-card">
+                    <div class="feature-icon">💬</div>
+                    <h3>WhatsApp Confirmation (Manual Send)</h3>
+                    <p>Receive booking confirmations via WhatsApp from the owner. Personal touch with manual review and
+                        approval.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Van Gallery Section -->
+    <section class="section van-gallery-section" style="background: var(--bg-surface);">
+        <div class="container">
+            <div class="features-header">
+                <h2 class="heading-2">Our <span class="text-gradient">Premium Fleet</span></h2>
+                <p class="text-secondary">Experience luxury travel with our well-maintained, stylish vans</p>
+            </div>
+
+            <!-- Main Gallery -->
+            <div class="van-gallery">
+                <div class="gallery-main">
+                    <div class="gallery-slider" id="gallerySlider">
+                        <div class="gallery-slide active">
+                            <img src="images/van-front.jpg" alt="SKP Travels Van - Front View">
+                            <div class="slide-caption">
+                                <span class="caption-badge">Front View</span>
+                                <h3>SKP Travels Premium Van</h3>
+                            </div>
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="images/van-side.jpg" alt="SKP Travels Van - Side View">
+                            <div class="slide-caption">
+                                <span class="caption-badge">Side View</span>
+                                <h3>Nithish Krishna - Stylish Design</h3>
+                            </div>
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="images/van-back.jpg" alt="SKP Travels Van - Rear View">
+                            <div class="slide-caption">
+                                <span class="caption-badge">Rear View</span>
+                                <h3>Patriotic Design with Modern Touch</h3>
+                            </div>
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="images/van-night.jpg" alt="SKP Travels Van - Night View">
+                            <div class="slide-caption">
+                                <span class="caption-badge">Night View</span>
+                                <h3>Stunning LED Lighting System</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Navigation Arrows -->
+                    <button class="gallery-nav gallery-prev" id="galleryPrev" aria-label="Previous image">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M15 19l-7-7 7-7" />
+                        </svg>
+                    </button>
+                    <button class="gallery-nav gallery-next" id="galleryNext" aria-label="Next image">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 5l7 7-7 7" />
+                        </svg>
+                    </button>
+
+                    <!-- Dots Indicator -->
+                    <div class="gallery-dots" id="galleryDots">
+                        <span class="gallery-dot active" data-index="0"></span>
+                        <span class="gallery-dot" data-index="1"></span>
+                        <span class="gallery-dot" data-index="2"></span>
+                        <span class="gallery-dot" data-index="3"></span>
+                    </div>
+                </div>
+
+                <!-- Thumbnails -->
+                <div class="gallery-thumbnails" id="galleryThumbnails">
+                    <div class="thumbnail active" data-index="0">
+                        <img src="images/van-front.jpg" alt="Front View Thumbnail">
+                        <span>Front</span>
+                    </div>
+                    <div class="thumbnail" data-index="1">
+                        <img src="images/van-side.jpg" alt="Side View Thumbnail">
+                        <span>Side</span>
+                    </div>
+                    <div class="thumbnail" data-index="2">
+                        <img src="images/van-back.jpg" alt="Rear View Thumbnail">
+                        <span>Rear</span>
+                    </div>
+                    <div class="thumbnail" data-index="3">
+                        <img src="images/van-night.jpg" alt="Night View Thumbnail">
+                        <span>Night</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Van Features -->
+            <div class="van-features-grid">
+                <div class="van-feature-item">
+                    <div class="van-feature-icon">🚐</div>
+                    <h4>22 Seater</h4>
+                    <p>Spacious & Comfortable</p>
+                </div>
+                <div class="van-feature-item">
+                    <div class="van-feature-icon">❄️</div>
+                    <h4>AC Equipped</h4>
+                    <p>Cool Journey Guaranteed</p>
+                </div>
+                <div class="van-feature-item">
+                    <div class="van-feature-icon">🎵</div>
+                    <h4>Music System</h4>
+                    <p>Premium Audio</p>
+                </div>
+                <div class="van-feature-item">
+                    <div class="van-feature-icon">🔌</div>
+                    <h4>Charging Points</h4>
+                    <p>Stay Connected</p>
+                </div>
+                <div class="van-feature-item">
+                    <div class="van-feature-icon">✨</div>
+                    <h4>LED Lighting</h4>
+                    <p>Stylish Ambiance</p>
+                </div>
+                <div class="van-feature-item">
+                    <div class="van-feature-icon">🛡️</div>
+                    <h4>GPS Tracking</h4>
+                    <p>Safety First</p>
+                </div>
+            </div>
+
+            <div class="text-center" style="margin-top: var(--space-2xl);">
+                <a href="booking.html" class="btn btn-primary">Book This Van Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section"
+        style="background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white;">
+        <div class="container text-center">
+            <h2 class="heading-2" style="margin-bottom: var(--space-lg);">Ready to Book Your Ride?</h2>
+            <p
+                style="opacity: 0.9; margin-bottom: var(--space-xl); max-width: 500px; margin-left: auto; margin-right: auto;">
+                Book our van for your next trip and enjoy a comfortable, hassle-free journey.</p>
+            <a href="booking.html" class="hero-btn-primary">Book Van Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-brand">🚐 SKP Travels</div>
+                    <p class="footer-desc">Your trusted partner for comfortable van rental. Quality service since 2014.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="WhatsApp">💬</a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="booking.html">Book Van</a></li>
+                        <li><a href="assistant.html">AI Assistant</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Popular Routes</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Temple Tours</a></li>
+                        <li><a href="#">Hill Station Trips</a></li>
+                        <li><a href="#">Beach Tours</a></li>
+                        <li><a href="#">Wedding/Events</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Contact Us</h4>
+                    <ul class="footer-contact">
+                        <li>👤 S.K.Panneerselvam (Owner)</li>
+                        <li>📞 +91 98437 75939</li>
+                        <li>📧 nishithisth@gmail.com</li>
+                        <li>📍 Arasarkulam keelpathi, Aranthangi, Pudukkottai</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 SKP Travels. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

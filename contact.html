@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact SKP Travels - Phone, WhatsApp, Email support for van bookings.">
+    <title>Contact Us - SKP Travels</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="loading-overlay">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-brand">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z" />
+                </svg>
+                SKP Travels
+            </a>
+            <button class="navbar-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+            <div class="navbar-menu">
+                <a href="index.html" class="navbar-link">Home</a>
+                <a href="booking.html" class="navbar-link">Book Van</a>
+                <a href="assistant.html" class="navbar-link">AI Assistant</a>
+                <a href="dashboard.html" class="navbar-link">Dashboard</a>
+                <a href="contact.html" class="navbar-link active">Contact</a>
+                <button class="theme-toggle" aria-label="Toggle theme">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>We're here to help with your van booking queries. Reach out via phone, WhatsApp, or email.</p>
+        </div>
+    </header>
+
+    <!-- Contact Section -->
+    <section class="section">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Cards -->
+                <div class="contact-info">
+                    <a href="tel:+919843775939" class="contact-card phone">
+                        <div class="contact-icon">📞</div>
+                        <div>
+                            <strong>Call Us</strong>
+                            <p class="text-secondary">S.K.Panneerselvam</p>
+                            <p class="text-secondary">+91 98437 75939</p>
+                            <small class="text-secondary">Available 6 AM - 10 PM</small>
+                        </div>
+                    </a>
+
+                    <a href="https://wa.me/919843775939?text=Hi!%20I%20want%20to%20book%20the%20SKP%20Travels%20van."
+                        target="_blank" class="contact-card whatsapp">
+                        <div class="contact-icon">💬</div>
+                        <div>
+                            <strong>WhatsApp</strong>
+                            <p class="text-secondary">+91 98437 75939</p>
+                            <small class="text-secondary">Quick responses</small>
+                        </div>
+                    </a>
+
+                    <a href="mailto:nishithisth@gmail.com" class="contact-card email">
+                        <div class="contact-icon">📧</div>
+                        <div>
+                            <strong>Email Us</strong>
+                            <p class="text-secondary">nishithisth@gmail.com</p>
+                            <small class="text-secondary">We reply within 24 hours</small>
+                        </div>
+                    </a>
+
+                    <a href="https://www.google.com/maps/search/Arasarkulam+keelpathi+Aranthangi+Pudukkottai+Tamil+Nadu+India"
+                        target="_blank" class="contact-card location">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <strong>Location</strong>
+                            <p class="text-secondary">Arasarkulam keelpathi, Aranthangi Taluk</p>
+                            <small class="text-secondary">Pudukkottai District, Tamil Nadu</small>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Contact Form -->
+                <div>
+                    <div class="card">
+                        <h3 class="heading-3 mb-2">Send a Message</h3>
+                        <form id="contact-form">
+                            <div class="form-group">
+                                <label class="form-label" for="contact-name">Your Name *</label>
+                                <input type="text" id="contact-name" class="form-input" placeholder="Enter your name"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="contact-phone">Phone Number *</label>
+                                <input type="tel" id="contact-phone" class="form-input" placeholder="+91 98437 75939"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="contact-message">Your Message *</label>
+                                <textarea id="contact-message" class="form-textarea" placeholder="How can we help you?"
+                                    required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>© 2026 SKP Travels. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            if (!SKP.FormValidator.validateForm(this)) return;
+            SKP.Loading.show();
+            setTimeout(() => {
+                SKP.Loading.hide();
+                SKP.Toast.success('Message sent! We\'ll get back to you soon.');
+                this.reset();
+            }, 1500);
+        });
+    </script>
+</body>
+
+</html>

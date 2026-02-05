@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SKP Travels Owner Dashboard - Manage van bookings and view analytics.">
+    <title>Dashboard - SKP Travels</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="loading-overlay">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-brand">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z" />
+                </svg>
+                SKP Travels
+            </a>
+            <button class="navbar-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+            <div class="navbar-menu">
+                <a href="index.html" class="navbar-link">Home</a>
+                <a href="booking.html" class="navbar-link">Book Van</a>
+                <a href="assistant.html" class="navbar-link">AI Assistant</a>
+                <a href="dashboard.html" class="navbar-link active">Dashboard</a>
+                <a href="contact.html" class="navbar-link">Contact</a>
+                <button class="theme-toggle" aria-label="Toggle theme">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <div class="modal-icon">🔐</div>
+                <h2 class="modal-title">Owner Login</h2>
+                <p class="text-secondary">Enter password to access dashboard</p>
+            </div>
+            <form id="login-form">
+                <div class="form-group">
+                    <label class="form-label" for="admin-password">Password</label>
+                    <input type="password" id="admin-password" class="form-input" placeholder="Enter owner password"
+                        required>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Login</button>
+            </form>
+            <p class="text-secondary text-center mt-2" style="font-size: 0.875rem;">Demo password: admin123</p>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <div>
+                <h1>Owner Dashboard</h1>
+                <p>Manage van bookings and view analytics</p>
+            </div>
+            <button class="btn btn-secondary" onclick="Dashboard.logout()"
+                style="border-color: white; color: white;">Logout</button>
+        </div>
+    </header>
+
+    <!-- Dashboard Content -->
+    <section class="section" id="dashboard-content" style="display: none;">
+        <div class="container">
+            <!-- Stats Cards -->
+            <div class="dashboard-stats">
+                <div class="stat-card">
+                    <div class="stat-icon blue">🚐</div>
+                    <div>
+                        <div class="stat-value" id="stat-total">0</div>
+                        <div class="stat-label">Total Bookings</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon orange">⏳</div>
+                    <div>
+                        <div class="stat-value" id="stat-pending">0</div>
+                        <div class="stat-label">Pending Requests</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon green">✅</div>
+                    <div>
+                        <div class="stat-value" id="stat-confirmed">0</div>
+                        <div class="stat-label">Confirmed Trips</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bookings Table -->
+            <div class="table-container">
+                <div class="table-header">
+                    <h3 class="table-title">Van Booking Requests</h3>
+                    <div class="sync-status" style="margin: 0; padding: 0.5rem 1rem;">
+                        <span class="sync-icon">✓</span>
+                        <span class="sync-text" style="font-size: 0.875rem;">Synced</span>
+                    </div>
+                </div>
+                <div class="table-wrapper">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Customer</th>
+                                <th>Phone</th>
+                                <th>WhatsApp</th>
+                                <th>Location / Route</th>
+                                <th>Trip Date</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="bookings-table"></tbody>
+                    </table>
+                </div>
+
+                <!-- Future Scope Section -->
+                <div class="card mt-2"
+                    style="background: linear-gradient(135deg, rgba(37, 211, 102, 0.1), rgba(0, 128, 105, 0.1)); border: 1px solid rgba(37, 211, 102, 0.3);">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem;">
+                        <span style="font-size: 1.5rem;">🔮</span>
+                        <strong style="color: var(--text-primary);">Future Enhancement</strong>
+                    </div>
+                    <p style="font-size: 0.875rem; color: var(--text-secondary); margin: 0;">
+                        Future enhancement includes full WhatsApp API automation using WhatsApp Cloud API and backend
+                        services.
+                        Currently, WhatsApp confirmations are sent manually via click-to-chat links.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>© 2026 SKP Travels. All rights reserved. | Owner Dashboard</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+
+</html>

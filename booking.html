@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Book SKP Travels van for your trip. Check availability and reserve your dates.">
+    <title>Book Van - SKP Travels</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="loading-overlay">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-brand">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z" />
+                </svg>
+                SKP Travels
+            </a>
+            <button class="navbar-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+            <div class="navbar-menu">
+                <a href="index.html" class="navbar-link">Home</a>
+                <a href="booking.html" class="navbar-link active">Book Van</a>
+                <a href="assistant.html" class="navbar-link">AI Assistant</a>
+                <a href="dashboard.html" class="navbar-link">Dashboard</a>
+                <a href="contact.html" class="navbar-link">Contact</a>
+                <button class="theme-toggle" aria-label="Toggle theme">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1>Book Our Van</h1>
+            <p>Select your travel date and fill in details to request a van booking.</p>
+        </div>
+    </header>
+
+    <!-- Booking Section -->
+    <section class="section">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Calendar -->
+                <div>
+                    <div id="booking-calendar" class="calendar"></div>
+
+                    <!-- WhatsApp Confirmation Info -->
+                    <div class="whatsapp-preview mt-2">
+                        <div class="whatsapp-header">
+                            <div class="whatsapp-avatar">💬</div>
+                            <div>
+                                <strong>SKP Travels</strong>
+                                <div style="font-size: 0.875rem; color: var(--text-secondary);">WhatsApp Confirmation
+                                    (Manual Send)</div>
+                            </div>
+                        </div>
+                        <div class="whatsapp-message">🚐 Booking Request Received!<br>Owner will review and confirm your
+                            booking.
+                        </div>
+                        <div class="whatsapp-message">✅ Once approved, you'll receive a WhatsApp confirmation message
+                            from the owner.</div>
+                        <div class="whatsapp-time">WhatsApp confirmation is sent manually by owner after approval</div>
+                    </div>
+
+                    <!-- Future Scope Section -->
+                    <div class="card mt-2"
+                        style="background: linear-gradient(135deg, rgba(37, 211, 102, 0.1), rgba(0, 128, 105, 0.1)); border: 1px solid rgba(37, 211, 102, 0.3);">
+                        <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem;">
+                            <span style="font-size: 1.5rem;">🔮</span>
+                            <strong style="color: var(--text-primary);">Future Enhancement</strong>
+                        </div>
+                        <p style="font-size: 0.875rem; color: var(--text-secondary); margin: 0;">
+                            Future enhancement includes full WhatsApp API automation using WhatsApp Cloud API and
+                            backend services.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Booking Form -->
+                <div>
+                    <div class="card">
+                        <h3 class="heading-3 mb-2">Booking Details</h3>
+                        <form id="booking-form">
+                            <div class="form-group">
+                                <label class="form-label" for="name">Full Name *</label>
+                                <input type="text" id="name" class="form-input" placeholder="Enter your full name"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" class="form-input" placeholder="+91 98437 75939" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="whatsapp">WhatsApp Number *</label>
+                                <input type="tel" id="whatsapp" class="form-input" placeholder="+91 98437 75939"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="email">Email Address</label>
+                                <input type="email" id="email" class="form-input" placeholder="you@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="trip-type">Trip Type *</label>
+                                <select id="trip-type" class="form-select" required>
+                                    <option value="">Select trip type</option>
+                                    <option value="Temple Tour">Temple Tour / Pilgrimage</option>
+                                    <option value="Hill Station">Hill Station Trip</option>
+                                    <option value="Beach Trip">Beach Trip</option>
+                                    <option value="Wedding/Event">Wedding / Event</option>
+                                    <option value="Family Outing">Family Outing</option>
+                                    <option value="Corporate">Corporate Trip</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="destination">Destination / Route *</label>
+                                <input type="text" id="destination" class="form-input"
+                                    placeholder="e.g., Chennai to Tirupati" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="passengers">Number of Passengers *</label>
+                                <input type="number" id="passengers" class="form-input" placeholder="e.g., 10" min="1"
+                                    max="22" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="travel-date">Selected Travel Date *</label>
+                                <input type="text" id="travel-date" class="form-input"
+                                    placeholder="Select a date from calendar" readonly required>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">Request Van
+                                Booking</button>
+                        </form>
+
+                        <!-- Google Sheets Sync Status -->
+                        <div class="sync-status">
+                            <span class="sync-icon">✓</span>
+                            <span class="sync-text">All booking data stored securely</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>© 2026 SKP Travels. All rights reserved. | <a href="contact.html">Contact Us</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/calendar.js"></script>
+    <script>
+        /**
+         * Booking Form Handler
+         * - Saves user details to localStorage for Owner Dashboard
+         * - Does NOT auto-send WhatsApp messages
+         * - Owner will review and manually send WhatsApp confirmation
+         * 
+         * FUTURE: WhatsApp Cloud API integration can be added here
+         * to send automated messages after backend validation
+         */
+        document.getElementById('booking-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Validate form fields
+            if (!SKP.FormValidator.validateForm(this)) return;
+
+            // Ensure a date is selected from calendar
+            if (!Calendar.getSelectedDate()) {
+                SKP.Toast.error('Please select a travel date from the calendar');
+                return;
+            }
+
+            // Collect booking data
+            const booking = {
+                name: document.getElementById('name').value,
+                phone: document.getElementById('phone').value,
+                whatsapp: document.getElementById('whatsapp').value,
+                email: document.getElementById('email').value,
+                tripType: document.getElementById('trip-type').value,
+                destination: document.getElementById('destination').value,
+                passengers: document.getElementById('passengers').value,
+                date: Calendar.getSelectedDate()
+            };
+
+            SKP.Loading.show();
+
+            // Save booking to localStorage for Owner Dashboard review
+            const bookings = JSON.parse(localStorage.getItem('skp_bookings') || '[]');
+            const newBooking = {
+                id: Date.now(),
+                ...booking,
+                status: 'pending', // Status: pending | confirmed | rejected
+                createdAt: new Date().toISOString()
+            };
+            bookings.unshift(newBooking);
+            localStorage.setItem('skp_bookings', JSON.stringify(bookings));
+
+            // Also save booked dates separately for calendar sync
+            const bookedDates = JSON.parse(localStorage.getItem('skp_booked_dates') || '[]');
+            localStorage.setItem('skp_booked_dates', JSON.stringify(bookedDates));
+
+            setTimeout(() => {
+                SKP.Loading.hide();
+
+                // Show success message - NO auto WhatsApp
+                // Owner will manually review and send WhatsApp confirmation
+                SKP.Toast.success('Booking request submitted. You will be notified after confirmation.');
+
+                this.reset();
+                document.getElementById('travel-date').value = '';
+
+                /**
+                 * FUTURE ENHANCEMENT: WhatsApp Cloud API Integration
+                 * 
+                 * When WhatsApp Business API is integrated, add the following:
+                 * 
+                 * await sendWhatsAppAPI({
+                 *   to: booking.whatsapp,
+                 *   template: 'booking_received',
+                 *   parameters: [booking.name, booking.date, booking.destination]
+                 * });
+                 * 
+                 * This will automatically send booking confirmation to user
+                 * Currently, owner manually sends confirmation from dashboard
+                 */
+            }, 1500);
+        });
+    </script>
+</body>
+
+</html>

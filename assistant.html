@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Chat with SKP Travels AI assistant for van booking queries and availability.">
+    <title>AI Assistant - SKP Travels</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="loading-overlay">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-brand">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z" />
+                </svg>
+                SKP Travels
+            </a>
+            <button class="navbar-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+            <div class="navbar-menu">
+                <a href="index.html" class="navbar-link">Home</a>
+                <a href="booking.html" class="navbar-link">Book Van</a>
+                <a href="assistant.html" class="navbar-link active">AI Assistant</a>
+                <a href="dashboard.html" class="navbar-link">Dashboard</a>
+                <a href="contact.html" class="navbar-link">Contact</a>
+                <button class="theme-toggle" aria-label="Toggle theme">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1>AI Booking Assistant</h1>
+            <p>Ask me about van availability, pricing, routes, and booking!</p>
+        </div>
+    </header>
+
+    <!-- Chat Section -->
+    <section class="section">
+        <div class="container" style="max-width: 800px;">
+            <div id="chat-container" class="chat-container">
+                <div class="chat-header">
+                    <div class="chat-avatar">🚐</div>
+                    <div>
+                        <strong>SKP Travels Assistant</strong>
+                        <div class="chat-status">
+                            <span class="status-dot"></span>
+                            <span>Online - Ready to help</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chat-messages"></div>
+
+                <div class="chat-input-container">
+                    <div class="chat-quick-actions">
+                        <button class="quick-action-btn">📅 Availability</button>
+                        <button class="quick-action-btn">💰 Pricing</button>
+                        <button class="quick-action-btn">🚐 Van Details</button>
+                        <button class="quick-action-btn">📝 How to book</button>
+                        <button class="quick-action-btn">📞 Contact</button>
+                    </div>
+                    <div class="chat-input-wrapper">
+                        <input type="text" class="chat-input" placeholder="Type your message...">
+                        <button class="chat-send-btn">➤</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>© 2026 SKP Travels. All rights reserved. | <a href="contact.html">Contact Us</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/chat.js"></script>
+</body>
+
+</html>
